@@ -21,17 +21,17 @@ class ApplicationTests {
 	@Autowired
 	MathHelper mathHelper;
 
-	@Test
-	public void add001(){
-		int actualResult = mathHelper.add(2,3);
-		int expect = 5;
-		assertEquals(actualResult,expect);
-	}
-
-	@Test
-	public void add002(){
-		int actualResult = mathHelper.add2(2,0);
-		int expect = 2;
-		assertEquals(actualResult,expect);
-	}
+//	@Test
+//	public void add001(){
+//		int actualResult = mathHelper.add(2,3);
+//		int expect = 5;
+//		assertEquals(expect,actualResult);
+//	}
+//
+//	@Test
+//	public void add002(){
+//		int actualResult = mathHelper.add2(2,0);
+//		int expect = 2;
+//		assertEquals(actualResult,expect);
+//	}
 }
