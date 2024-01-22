@@ -29,7 +29,9 @@ public class ProductController {
                                @RequestParam(defaultValue = "2") int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<ProductEntity> searchList;
+
         if (searchInput.isEmpty()) {
+
             searchList = (Page<ProductEntity>) productService.getAllProduct(pageable);
         } else {
             searchList = productService.getProductsByName(searchInput, pageable);
