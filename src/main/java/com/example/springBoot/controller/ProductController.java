@@ -31,7 +31,6 @@ public class ProductController {
         Page<ProductEntity> searchList;
 
         if (searchInput.isEmpty()) {
-
             searchList = (Page<ProductEntity>) productService.getAllProduct(pageable);
         } else {
             searchList = productService.getProductsByName(searchInput, pageable);
