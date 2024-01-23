@@ -20,4 +20,7 @@ public class ProductService {
     public Page<ProductEntity> getProductsByName(String searchInput, Pageable pageable) {
         return productRepository.getByNameContaining(searchInput,pageable);
     }
+    public void addProduct(ProductEntity productEntity){
+        productRepository.save(productEntity);
+    }
 }

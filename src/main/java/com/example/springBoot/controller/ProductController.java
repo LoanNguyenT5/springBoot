@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @Controller
 public class ProductController {
@@ -27,6 +28,9 @@ public class ProductController {
     public String showProducts(Model model, @RequestParam(name="searchInput", required=false, defaultValue="") String searchInput,
                                @RequestParam(defaultValue = "0") int page,
                                @RequestParam(defaultValue = "2") int size) {
+        // init data
+        initProduct();
+
         Pageable pageable = PageRequest.of(page, size);
         Page<ProductEntity> searchList;
 
@@ -38,5 +42,19 @@ public class ProductController {
         model.addAttribute("productList", searchList);
         model.addAttribute("searchInput", searchInput);
         return "product";
+    }
+    private void initProduct(){
+        Pageable pageable = PageRequest.of(0, 1);
+        Page<ProductEntity> searchList = (Page<ProductEntity>) productService.getAllProduct(pageable);
+        if(searchList.isEmpty()){
+            for(int i = 0; i<10; i++){
+                ProductEntity entity =new ProductEntity();
+                entity.setCreateAt(new Date());
+                entity.setDescription("Description " + i);
+                entity.setName("Product name "+i);
+                entity.setPrice(10 + i);
+                productService.addProduct(entity);
+            }
+        }
     }
 }
