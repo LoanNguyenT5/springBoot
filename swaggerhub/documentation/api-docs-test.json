@@ -1,13 +1,9 @@
 {
   "openapi" : "3.0.0",
   "info" : {
-    "title" : "E-commerce API - Test - push",
+    "title" : "E-commerce API - Test - push -v2",
     "version" : "1.0.1"
   },
-  "servers" : [ {
-    "url" : "https://virtserver.swaggerhub.com/LOANNGUYEN1501/Test/1.0.0",
-    "description" : "SwaggerHub API Auto Mocking"
-  } ],
   "paths" : {
     "/products" : {
       "get" : {
@@ -77,5 +73,9 @@
         }
       }
     }
-  }
+  },
+  "servers" : [ {
+    "description" : "SwaggerHub API Auto Mocking",
+    "url" : "https://virtserver.swaggerhub.com/LOANNGUYEN1501/Test/1.0.0"
+  } ]
 }
