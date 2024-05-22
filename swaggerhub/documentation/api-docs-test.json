@@ -1,7 +1,7 @@
 {
   "openapi" : "3.0.0",
   "info" : {
-    "title" : "E-commerce API - Test - push -v2",
+    "title" : "E-commerce API - Test - Pull",
     "version" : "1.0.1"
   },
   "paths" : {
